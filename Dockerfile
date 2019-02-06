@@ -10,7 +10,7 @@ RUN \
     libtool  \
     linux-headers \
   \
-  cd / \
+  && cd / \
   && git clone https://github.com/statsite/statsite.git \
   && cd statsite \
   && ./autogen.sh \
