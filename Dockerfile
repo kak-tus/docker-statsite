@@ -19,7 +19,12 @@ RUN \
 
 FROM alpine:3.9
 
+RUN \
+  apk add --no-cache \
+    python
+
 COPY --from=build /statsite/statsite /usr/local/bin/statsite
+COPY --from=build /statsite/sinks /var/lib/statsite/sinks
 
 EXPOSE 8125 8125/udp
 
